@@ -48,26 +48,8 @@ body {
   border-bottom: 1px solid color-mix(in srgb, var(--cobalt-20) 70%, transparent);
   background: var(--white);
 }
-.logo {
-  display: inline-flex;
-  align-items: center;
-  font-weight: 800;
-  font-size: 34px;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  text-decoration: none;
-  flex-shrink: 0;
-}
-.logo .r, .logo .s { color: var(--pink); }
-.logo .t { color: var(--teal); }
-.logo .oo { display: inline-flex; margin: 0 1px; }
-.logo .o {
-  width: 0.56em; height: 0.56em; border-radius: 50%;
-  margin-top: 0.12em;
-  mix-blend-mode: multiply;
-}
-.logo .o1 { background: var(--teal); }
-.logo .o2 { background: var(--amber); margin-left: -0.18em; }
+.logo { display: inline-flex; flex-shrink: 0; line-height: 0; }
+.logo svg { height: 38px; width: auto; display: block; isolation: isolate; }
 .links {
   display: flex; gap: 28px; margin-inline: auto;
   list-style: none; padding: 0;
@@ -117,17 +99,8 @@ body {
 .stage svg { width: 100%; height: 100%; overflow: visible; display: block; }
 .stage:focus-visible { outline: 3px solid var(--teal); outline-offset: 6px; border-radius: 24px; }
 
-.meta {
-  display: flex; gap: 28px; justify-content: center; flex-wrap: wrap;
-  margin-top: 4px;
-  font-size: 17px; font-weight: 500;
-  color: var(--cobalt-60);
-  animation: rise .9s .15s var(--ease-out) both;
-}
-.meta time { color: var(--ink); }
-
 h1 {
-  margin: 22px 0 0;
+  margin: 8px 0 0;
   font-weight: 500;
   font-size: clamp(48px, 9vw, 112px);
   line-height: 1;
@@ -186,18 +159,23 @@ h1 .brand { color: var(--teal); }
 }
 @media (max-width: 480px) {
   .lang span, .user .name, .user svg { display: none; }
-  .logo { font-size: 28px; }
-  .meta { gap: 16px; font-size: 15px; }
+  .logo svg { height: 30px; }
   .btn { padding: 15px 28px; font-size: 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .stage, .meta, h1, .lede, .ctas, .hint { animation: none; }
+  .stage, h1, .lede, .ctas, .hint { animation: none; }
 }
 </style>
 
 <header class="nav">
   <a class="logo" href="#" aria-label="Roost home">
-    <span class="r">r</span><span class="oo" aria-hidden="true"><span class="o o1"></span><span class="o o2"></span></span><span class="s">s</span><span class="t">t</span>
+    <svg viewBox="0 0 253.5 73.8" role="img" aria-hidden="true">
+<path class="r" fill="var(--teal)" fill-rule="evenodd" d="M22.79 16.07 L22.79 25.53 C25.65 18.60 30.38 14.75 38.63 14.75 C39.95 14.75 41.61 14.97 42.27 15.19 L42.27 37.09 C41.72 36.87 39.52 36.32 37.20 36.32 C26.86 36.32 22.79 42.81 22.79 54.14 L22.79 73.07 L0.01 73.07 L0.01 16.07 L22.79 16.07 Z"/>
+<path class="o1" fill="var(--pink)" fill-rule="evenodd" d="M79.28 14.01 C60.52 14.01 47.61 26.59 47.61 43.91 C47.61 61.23 60.52 73.81 79.28 73.81 C98.03 73.81 110.94 61.23 110.94 43.91 C110.94 26.59 98.03 14.01 79.28 14.01 Z"/>
+<path class="o2" style="mix-blend-mode:multiply" fill="var(--amber)" fill-rule="evenodd" d="M119.73 53.84 C124.48 53.84 128.56 50.53 128.56 43.91 C128.56 37.29 124.48 33.98 119.73 33.98 C114.99 33.98 110.90 37.29 110.90 43.91 C110.90 50.53 114.99 53.84 119.73 53.84 Z M88.07 43.91 C88.07 26.59 100.98 14.01 119.73 14.01 C138.49 14.01 151.40 26.59 151.40 43.91 C151.40 61.23 138.49 73.81 119.73 73.81 C100.98 73.81 88.07 61.23 88.07 43.91 Z"/>
+<path class="s" fill="var(--teal)" fill-rule="evenodd" d="M169.06 49.98 C171.38 54.17 176.45 57.48 181.97 57.48 C184.51 57.48 186.05 56.93 186.05 55.50 C186.05 53.29 181.53 52.41 175.02 50.09 C164.10 46.23 157.37 41.59 157.37 32.00 C157.37 20.63 167.85 14.01 182.19 14.01 C192.12 14.01 201.28 18.65 204.81 25.38 L190.80 35.53 C189.25 32.66 185.72 30.34 181.53 30.34 C179.76 30.34 177.78 30.78 177.78 32.44 C177.78 34.53 181.20 34.64 188.92 37.62 C201.39 42.48 206.46 46.56 206.46 54.94 C206.46 65.31 197.19 73.81 181.97 73.81 C170.05 73.81 160.35 69.51 155.27 60.79 L169.06 49.98 Z"/>
+<path class="t" fill="var(--pink)" fill-rule="evenodd" d="M218.14 15.34 L218.14 0.00 L240.43 0.00 L240.43 15.34 L252.12 15.34 L252.12 32.66 L240.43 32.66 L240.43 48.66 C240.43 52.30 242.64 54.17 245.84 54.17 C248.59 54.17 251.68 53.18 253.45 52.30 L253.45 70.94 C250.69 72.38 245.73 73.81 239.44 73.81 C226.20 73.81 217.59 66.09 217.59 52.07 L217.59 32.66 L210.86 32.66 L210.86 15.34 L218.14 15.34 Z"/>
+    </svg>
   </a>
   <ul class="links">
     <li><a href="#">Find My Matches</a></li>
@@ -222,123 +200,39 @@ h1 .brand { color: var(--teal); }
 <main class="hero">
   <div class="wash" aria-hidden="true"></div>
 
-  <div class="stage" id="stage" role="img" tabindex="0" aria-label="Roost the rooster, a round cream chick with a pink comb and googly eyes that follow your cursor. Click to make him cluck.">
+  <div class="stage" id="stage" role="img" tabindex="0" aria-label="Roost the rooster, a flat cream head with a pink comb and wattle and googly eyes that follow your cursor. Click to make him cluck.">
     <svg viewBox="0 0 300 300" aria-hidden="true">
-      <defs>
-        <radialGradient id="gHead" cx="42%" cy="34%" r="72%">
-          <stop offset="0" stop-color="#FFFFFF"/>
-          <stop offset=".45" stop-color="#FCE9D3"/>
-          <stop offset="1" stop-color="#F5BE7A"/>
-        </radialGradient>
-        <radialGradient id="gComb" cx="40%" cy="30%" r="80%">
-          <stop offset="0" stop-color="#F9B2C3"/>
-          <stop offset=".35" stop-color="#EF3E69"/>
-          <stop offset="1" stop-color="#C73257"/>
-        </radialGradient>
-        <linearGradient id="gBeak" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#F5BE7A"/>
-          <stop offset=".5" stop-color="#EF9321"/>
-          <stop offset="1" stop-color="#C7761A"/>
-        </linearGradient>
-        <linearGradient id="gWattle" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#C73257"/>
-          <stop offset=".3" stop-color="#EF3E69"/>
-          <stop offset="1" stop-color="#F26588"/>
-        </linearGradient>
-        <radialGradient id="gSclera" cx="40%" cy="35%" r="70%">
-          <stop offset="0" stop-color="#FFFFFF"/>
-          <stop offset=".75" stop-color="#FFFFFF"/>
-          <stop offset="1" stop-color="#D1D6DE"/>
-        </radialGradient>
-        <radialGradient id="gPupil" cx="38%" cy="32%" r="75%">
-          <stop offset="0" stop-color="#183058"/>
-          <stop offset=".7" stop-color="#1D1E1E"/>
-        </radialGradient>
-        <linearGradient id="gTie" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#38A5A9"/>
-          <stop offset="1" stop-color="#056F73"/>
-        </linearGradient>
-        <radialGradient id="gShadow" cx="50%" cy="50%" r="50%">
-          <stop offset="0" stop-color="#183058" stop-opacity=".22"/>
-          <stop offset="1" stop-color="#183058" stop-opacity="0"/>
-        </radialGradient>
-        <radialGradient id="gBlush" cx="50%" cy="50%" r="50%">
-          <stop offset="0" stop-color="#EF3E69" stop-opacity=".38"/>
-          <stop offset="1" stop-color="#EF3E69" stop-opacity="0"/>
-        </radialGradient>
-        <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="1.2"/>
-        </filter>
-      </defs>
-
-      <!-- ground shadow -->
-      <ellipse id="shadow" cx="150" cy="276" rx="92" ry="12" fill="url(#gShadow)"/>
+      <ellipse id="shadow" cx="150" cy="282" rx="78" ry="7" fill="var(--cobalt)" opacity=".08"/>
 
       <g id="bob">
         <g id="head">
-          <!-- comb sits behind the head -->
-          <g id="comb">
-            <circle cx="118" cy="62" r="25" fill="url(#gComb)"/>
-            <circle cx="150" cy="42" r="31" fill="url(#gComb)"/>
-            <circle cx="183" cy="64" r="23" fill="url(#gComb)"/>
-            <ellipse cx="141" cy="28" rx="10" ry="5.5" fill="#FFFFFF" opacity=".4" transform="rotate(-24 141 28)"/>
-          </g>
-
-          <!-- head: a soft squircle-ish egg -->
-          <path id="headShape" fill="url(#gHead)" d=""/>
-          <!-- rim light + contact shade -->
-          <path id="headRim" fill="none" stroke="#FFFFFF" stroke-opacity=".6" stroke-width="2" d=""/>
-          <ellipse cx="118" cy="120" rx="34" ry="16" fill="#FFFFFF" opacity=".55" filter="url(#soft)" transform="rotate(-24 118 120)"/>
+          <!-- single-blade comb, tucked behind the head -->
+          <path id="comb" fill="var(--pink)" d="M112 104 C 104 82, 106 58, 122 46 C 126 58, 131 66, 138 68 C 136 46, 144 26, 162 16 C 162 36, 166 48, 174 52 C 177 38, 188 30, 204 30 C 200 50, 200 78, 192 104 Z"/>
+          <circle cx="150" cy="170" r="104" fill="var(--amber-20)"/>
 
           <g id="face">
-            <ellipse cx="96" cy="190" rx="24" ry="15" fill="url(#gBlush)"/>
-            <ellipse cx="204" cy="190" rx="24" ry="15" fill="url(#gBlush)"/>
-
             <!-- googly eyes -->
-            <g id="eyeL" transform="translate(116 152)">
-              <circle r="26" fill="#183058" opacity=".12" cy="3"/>
-              <circle r="24.5" fill="url(#gSclera)" stroke="#D1D6DE" stroke-width="1.5"/>
-              <g class="pupil"><circle r="11.5" fill="url(#gPupil)"/></g>
-              <ellipse cx="-8" cy="-11" rx="7" ry="4" fill="#FFFFFF" opacity=".95" transform="rotate(-30 -8 -11)"/>
-              <circle cx="9" cy="10" r="2" fill="#FFFFFF" opacity=".6"/>
+            <g id="eyeL" transform="translate(114 156)">
+              <circle r="24" fill="var(--white)" stroke="var(--cobalt)" stroke-width="2.5"/>
+              <g class="pupil"><circle r="11" fill="var(--cobalt)"/></g>
             </g>
-            <g id="eyeR" transform="translate(184 152)">
-              <circle r="26" fill="#183058" opacity=".12" cy="3"/>
-              <circle r="24.5" fill="url(#gSclera)" stroke="#D1D6DE" stroke-width="1.5"/>
-              <g class="pupil"><circle r="11.5" fill="url(#gPupil)"/></g>
-              <ellipse cx="-8" cy="-11" rx="7" ry="4" fill="#FFFFFF" opacity=".95" transform="rotate(-30 -8 -11)"/>
-              <circle cx="9" cy="10" r="2" fill="#FFFFFF" opacity=".6"/>
+            <g id="eyeR" transform="translate(186 156)">
+              <circle r="24" fill="var(--white)" stroke="var(--cobalt)" stroke-width="2.5"/>
+              <g class="pupil"><circle r="11" fill="var(--cobalt)"/></g>
             </g>
 
-            <!-- wattle hangs, swings a little -->
             <g id="wattle">
-              <path d="M150 196 C 138 204, 134 226, 141 238 C 145 245, 150 240, 150 234 C 150 240, 155 245, 159 238 C 166 226, 162 204, 150 196 Z" fill="url(#gWattle)"/>
+              <path fill="var(--pink)" d="M150 196 C 136 206, 132 234, 140 248 C 145 256, 150 250, 150 242 C 150 250, 155 256, 160 248 C 168 234, 164 206, 150 196 Z"/>
             </g>
-            <!-- beak -->
             <g id="beak">
-              <path d="M150 170 C 158 170, 172 180, 172 188 C 172 196, 158 206, 150 208 C 142 206, 128 196, 128 188 C 128 180, 142 170, 150 170 Z" fill="url(#gBeak)"/>
-              <path d="M131 189 Q150 193 169 189" fill="none" stroke="#C7761A" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
-              <ellipse cx="144" cy="178" rx="6" ry="3" fill="#FFFFFF" opacity=".55"/>
+              <path fill="var(--amber)" d="M150 174 C 156 174, 172 186, 172 192 C 172 198, 156 212, 150 214 C 144 212, 128 198, 128 192 C 128 186, 144 174, 150 174 Z"/>
             </g>
           </g>
-        </g>
-
-        <!-- bow tie, a nod to the dots -->
-        <g id="tie">
-          <path d="M150 262 C 136 250, 116 244, 110 250 C 104 257, 106 274, 112 280 C 118 286, 138 276, 150 268 Z" fill="url(#gTie)"/>
-          <path d="M150 262 C 164 250, 184 244, 190 250 C 196 257, 194 274, 188 280 C 182 286, 162 276, 150 268 Z" fill="url(#gTie)"/>
-          <rect x="141" y="256" width="18" height="18" rx="7" fill="#056F73"/>
-          <path d="M116 254 C 124 252, 134 256, 142 261" stroke="#FFFFFF" stroke-opacity=".35" stroke-width="3" fill="none" stroke-linecap="round"/>
         </g>
       </g>
     </svg>
   </div>
 
-  <div class="meta">
-    <time datetime="2026-09-29">September 29, 2026</time>
-    <span>Product</span>
-    <span>Company</span>
-  </div>
 
   <h1>Introducing <span class="brand">Roost</span></h1>
 
@@ -357,32 +251,13 @@ h1 .brand { color: var(--teal); }
   const $ = (s) => document.querySelector(s);
   const stage = $('#stage');
   const bob = $('#bob'), head = $('#head'), face = $('#face'), comb = $('#comb');
-  const wattle = $('#wattle'), beak = $('#beak'), tie = $('#tie'), shadow = $('#shadow');
+  const wattle = $('#wattle'), beak = $('#beak'), shadow = $('#shadow');
   const eyes = [$('#eyeL'), $('#eyeR')].map((el, i) => ({
     el, pupil: el.querySelector('.pupil'),
-    cx: i ? 184 : 116, cy: 152,
+    cx: i ? 186 : 114, cy: 156,
     p: { x: 0, y: 6 }, v: { x: 0, y: 0 }
   }));
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Head outline: an egg that's a touch wider at the cheeks.
-  const headPath = (() => {
-    const cx = 150, cy = 158, n = 96, pts = [];
-    for (let i = 0; i < n; i++) {
-      const t = (i / n) * Math.PI * 2;
-      const c = Math.cos(t), s = Math.sin(t);
-      const rx = 96 + 6 * Math.max(0, s);    // fuller at the bottom
-      const ry = 92 + 6 * Math.max(0, s);
-      // superellipse exponent softens toward a squircle
-      const e = 2.15;
-      const x = cx + rx * Math.sign(c) * Math.pow(Math.abs(c), 2 / e);
-      const y = cy + ry * Math.sign(s) * Math.pow(Math.abs(s), 2 / e);
-      pts.push(`${x.toFixed(2)} ${y.toFixed(2)}`);
-    }
-    return 'M' + pts.join(' L') + ' Z';
-  })();
-  $('#headShape').setAttribute('d', headPath);
-  $('#headRim').setAttribute('d', headPath);
 
   // Pointer target (in SVG units relative to stage center). Default: look at the viewer.
   const pointer = { x: 0, y: 0, active: false, lastMove: performance.now() };
@@ -462,19 +337,18 @@ h1 .brand { color: var(--teal); }
     const breathe = reduce ? 0 : Math.sin(time * 2.1) * 0.012;
     const sy = 1 + S * 0.12 + breathe, sx = 1 - S * 0.09 - breathe * 0.6;
 
-    bob.setAttribute('transform', `translate(150 272) scale(${sx.toFixed(4)} ${sy.toFixed(4)}) translate(-150 -272)`);
+    bob.setAttribute('transform', `translate(150 274) scale(${sx.toFixed(4)} ${sy.toFixed(4)}) translate(-150 -274)`);
     head.setAttribute('transform', `translate(${HX.toFixed(2)} ${HY.toFixed(2)}) rotate(${R.toFixed(2)} 150 200)`);
     face.setAttribute('transform', `translate(${(HX * 0.9).toFixed(2)} ${(HY * 0.8).toFixed(2)})`);
-    comb.setAttribute('transform', `translate(${(-HX * 0.35).toFixed(2)} ${(-HY * 0.25).toFixed(2)}) rotate(${clamp(C, -22, 22).toFixed(2)} 150 96)`);
-    wattle.setAttribute('transform', `rotate(${clamp(W * 0.8 + HX * 0.6, -26, 26).toFixed(2)} 150 198)`);
+    comb.setAttribute('transform', `translate(${(-HX * 0.35).toFixed(2)} ${(-HY * 0.25).toFixed(2)}) rotate(${clamp(C, -16, 16).toFixed(2)} 152 100)`);
+    wattle.setAttribute('transform', `rotate(${clamp(W * 0.8 + HX * 0.6, -26, 26).toFixed(2)} 150 200)`);
     beakOpen *= Math.pow(0.001, dt);                          // snappy close
-    beak.setAttribute('transform', `translate(0 ${(beakOpen * 4).toFixed(2)}) rotate(${(R * 0.4).toFixed(2)} 150 188)`);
-    tie.setAttribute('transform', `translate(${(HX * 0.25).toFixed(2)} 0) rotate(${(-R * 0.6 + C * 0.08).toFixed(2)} 150 265)`);
+    beak.setAttribute('transform', `translate(0 ${(beakOpen * 4).toFixed(2)}) rotate(${(R * 0.4).toFixed(2)} 150 194)`);
     shadow.setAttribute('transform', `translate(${(HX * 0.5).toFixed(2)} 0) scale(${(1 + S * 0.06).toFixed(4)} 1)`);
-    shadow.setAttribute('transform-origin', '150 276');
+    shadow.setAttribute('transform-origin', '150 282');
 
     // Googly pupils: spring toward gaze target + inertia from head motion + gravity, bouncing inside the sclera.
-    const MAXR = 24.5 - 11.5 - 1.2;
+    const MAXR = 24 - 11 - 2.5;
     const offX = HX * 1.9, offY = HY * 1.8;                   // eye world offset (head + face parallax)
     for (const e of eyes) {
       const ex = e.cx + offX, ey = e.cy + offY;
